@@ -30,6 +30,7 @@
 }
 
 body {
+    font-family: sans-serif;
     height: 100svh;
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -84,6 +85,10 @@ main > .books {
 main > header {
     display: grid;
     grid-template-columns: repeat(5, 1fr) 40px;
+}
+main h3,
+main span {
+    text-align: center;
 }
 
 button:hover {
