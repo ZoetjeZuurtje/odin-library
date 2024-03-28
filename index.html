@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>odin-library</title>
+    <link rel="stylesheet" href="css/global/normalize.css">
+    <link rel="stylesheet" href="css/global/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <section>
+        <h3>Filter books</h3>
+        <label for="author">
+            <span>Author: </span>
+            <input type="text" id="author" name="author">
+        </label>
+        <label for="pages">
+            <span>Number of pages:</span>
+            <input type="range" id="pages" name="pages" min="1" step="1" max="10">
+        </label>
+        <label for="title">
+            <span>Title: </span>
+            <input type="text" id="title" name="title">
+        </label>
+    </section>
+    <header>
+        <h1>DemoLib - Sharing Books Since Never</h1>
+        <nav>
+            <a href="">Home</a><a href="">Your Books</a><a href="">About Us</a><a href="">Lorem's Ipsum</a>
+        </nav>
+    </header>
+    <main>
+        <dialog>
+            <form method="dialog">
+                <h2>Hi, please add a book using this form.</h2>
+                <label for="book-cover">
+                    <span>Cover: </span>
+                    <input type="text" id="book-cover" placeholder="Please enter a URL">
+                </label><br>
+                <label for="book-title">
+                    <span>Title: </span>
+                    <input type="text" id="book-title">
+                </label><br>
+                <label for="book-author">
+                    <span>Author:</span>
+                    <input type="text" id="book-author">
+                </label><br>
+                <label for="book-pages">
+                    <span>Pages: </span>
+                    <input type="number" id="book-pages">
+                </label><br>
+                <label for="book-read">
+                    <span>Read: </span>
+                    <input type="checkbox" id="book-read">
+                </label>
+                <button type="submit">Confirm</button>
+                <button type="cancel">Cancel</button>
+            </form>
+        </dialog>
+        <header>
+            <h3>Cover</h3>
+            <h3>Title</h3>
+            <h3>Author</h3>
+            <h3>Pages</h3>
+            <h3>Read</h3>
+            <button>+</button>
+        </header>
+        <div class="books">
+            <div class="book">
+                <img src="https://placehold.co/100x120" alt="">
+                <span>${book.title}</span>
+                <span>${book.author}</span>
+                <span>${book.pages}</span>
+                <span>${book.haveRead}</span>
+                <div class="book-buttons">
+                    <button class="onclick read-book">
+                        <span class="material-symbols-outlined">
+                        chrome_reader_mode
+                        </span>
+                    </button>
+                    <button class="onclick remove-book">
+                        <span class="material-symbols-outlined">
+                        delete
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

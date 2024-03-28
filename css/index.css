@@ -1,0 +1,99 @@
+.book {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 40px;
+    height: 120px;
+}
+.book + .book {
+    border-top: solid black 3px;
+}
+.book > span {
+    position: relative;
+    top: 50px;
+}
+.book-buttons {
+    display: flex;
+    flex-direction: column;
+}
+.book-buttons button {
+    flex-grow: 1;
+    border: none;
+}
+.book img {
+    max-height: 100%;
+    max-width: 100%;
+}
+.onclick.read-book {
+    background-color: hsl(121, 58%, 51%);
+}
+.onclick.remove-book {
+    background-color: hsl(0, 77%, 51%);
+}
+
+body {
+    height: 100svh;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 150px 1fr;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+}
+header {
+    grid-area: header;
+    background-color: whitesmoke;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: black;
+    margin: 0 10px;
+    text-decoration: orange underline 2px;
+}
+
+section {
+    grid-area: sidebar;
+    background-color: lightskyblue;
+}
+section > label {
+    display: inline-block;
+    width: 80%;
+    margin: 0 auto;
+}
+section input {
+    width: 90%;
+}
+
+header button {
+    background-color: lightskyblue;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 5px;
+}
+
+main {
+    position: relative;
+}
+main > .books {
+    display: grid;
+    grid-auto-rows: 120px;
+}
+main > header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 40px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+dialog {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    z-index: 2;
+    margin-top: 100px;
+}
