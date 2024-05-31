@@ -103,10 +103,10 @@ function getValues(form) {
     return inputValues;
 }
 
-const showFormBtn  = document.querySelector('header button');
-const formModal = document.querySelector('dialog');
-const form      = document.querySelector('dialog form');
-const confirmBtn =    form.querySelector('button[type="submit"]');
+const showFormBtn   = document.querySelector('header button');
+const formModal     = document.querySelector('dialog');
+const form          = document.querySelector('dialog form');
+const confirmBtn    = form.querySelector('button[type="submit"]');
 form.querySelectorAll('input').forEach(element => {
     element.addEventListener('change', () => {
         confirmBtn.value = getValues(form);
