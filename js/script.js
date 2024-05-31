@@ -93,12 +93,11 @@ LibraryGUI.prototype.toggleRead = function(event) {
     this.updateBook(id);
 }
 
-function getValues(form) {
+function getValues(form, isPressed = false) {
     const inputs = form.querySelectorAll('input:not([type="checkbox"])');
     const checkbox = form.querySelector('input[type="checkbox"]');
     const checkboxValue = checkbox.checked;
-    console.log(checkboxValue);
-    let inputValues = [checkboxValue];
+    let inputValues = [isPressed, checkboxValue];
     inputs.forEach(elem => inputValues.push(elem.value));
     return inputValues;
 }
@@ -112,10 +111,14 @@ form.querySelectorAll('input').forEach(element => {
         confirmBtn.value = getValues(form);
     });
 });
-formModal.addEventListener('close', e => {
+formModal.addEventListener('close', () => {
     let values = confirmBtn.value.split(',');
-    let cover = values[1] ? values[1] : undefined;
-    let book = new Book(values[2], values[3], values[4], values[0], cover,/* id*/);
+    const submitButtonPressed = values[0];
+    if (submitButtonPressed === "false") {
+        return;
+    }
+    let cover = values[2] ? values[2] : undefined;
+    let book = new Book(values[3], values[4], values[5], values[1], cover,/* id*/);
     lib.add(book);
     gui.displayBooks();
 });
@@ -123,6 +126,9 @@ showFormBtn.addEventListener('click', () => {
     formModal.show();
     confirmBtn.value = getValues(form);
 });
+confirmBtn.addEventListener('click', () => {
+    confirmBtn.value = getValues(form, true);
+})
 
 let lib = new Library();
 let gui = new LibraryGUI(lib, document.querySelector('.books'));
