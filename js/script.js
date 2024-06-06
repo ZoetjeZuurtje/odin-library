@@ -118,7 +118,7 @@ formModal.addEventListener('close', () => {
         return;
     }
     let cover = values[2] ? values[2] : undefined;
-    let book = new Book(values[3], values[4], values[5], values[1], cover,/* id*/);
+    let book = new Book(values[3], values[4], values[5], values[1] === "true", cover,/* id*/);
     lib.add(book);
     gui.displayBooks();
 });
